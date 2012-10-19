@@ -25,14 +25,8 @@
     reb = "!r() { git rebase -i HEAD~$1; }; r"
     # Undo a `git push`
     undopush = push -f origin HEAD^:master
-
-[apply]
-    # Detect whitespace errors when applying a patch
-    whitespace = fix
-
-[core]
-    # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
-    whitespace = space-before-tab,indent-with-non-tab,trailing-space
+    # reset to last commit on HEAD
+    fuckit = reset --hard HEAD
 
 [color]
     # Use colors in Git commands that are capable of colored output when outputting to the terminal
@@ -57,3 +51,15 @@
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
+
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
+
+[core]
+    editor = vim
+    # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
+    whitespace = space-before-tab,indent-with-non-tab,trailing-space
+
+[web]
+    browser = google-chrome
