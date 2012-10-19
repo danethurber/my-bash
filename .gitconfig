@@ -26,7 +26,7 @@
     # Undo a `git push`
     undopush = push -f origin HEAD^:master
     # reset to last commit on HEAD
-    fuckit = reset --hard HEAD
+    stfu = reset --hard HEAD
 
 [color]
     # Use colors in Git commands that are capable of colored output when outputting to the terminal
