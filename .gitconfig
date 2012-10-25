@@ -1,6 +1,6 @@
 [alias]
     # View the SHA, description, and history graph of the latest 20 commits
-    l = log --pretty='format:%C(yellow)%h %Creset- %C(white)%s %Cgreen(%cr) %C(bold blue)<%an>%Creset' -n 20 --graph --date=short --abbrev-commit
+    l = log --pretty='format:%C(yellow)%h %Creset- %C(white)%s %C(bold blue)[%an]%Creset %Cgreen%cr' -n 20 --graph
     # View the current working tree status using the short format
     s = status -s
     # Show the diff between the latest commit and the current state
@@ -38,12 +38,13 @@
     remote = green
 
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+    meta = yellow black
+    frag = magenta black
+    old = red black
+    new = green black
 
 [color "status"]
+    plain = white
     added = yellow
     changed = green
     untracked = cyan
@@ -60,6 +61,10 @@
     editor = vim
     # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
     whitespace = space-before-tab,indent-with-non-tab,trailing-space
+
+[log]
+    abbrevCommit = true
+    date = short
 
 [web]
     browser = google-chrome
