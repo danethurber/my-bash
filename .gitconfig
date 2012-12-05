@@ -30,6 +30,8 @@
     undopush = push -f origin HEAD^:master
     # Search through codebase
     grep = grep -Ii
+    # Search from root folder
+    gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
     # Grep on filename
     f = "!git ls-files | grep -i"
     # reset to last commit on HEAD
