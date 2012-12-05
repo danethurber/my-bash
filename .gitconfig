@@ -28,7 +28,9 @@
     reb = "!r() { git rebase -i HEAD~$1; }; r"
     # Undo a `git push`
     undopush = push -f origin HEAD^:master
-    #grep on filename
+    # Search through codebase
+    grep = grep -Ii
+    # Grep on filename
     f = "!git ls-files | grep -i"
     # reset to last commit on HEAD
     stfu = reset --hard HEAD
