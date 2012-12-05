@@ -37,6 +37,9 @@
     # reset to last commit on HEAD
     stfu = reset --hard HEAD
 
+    # list aliases
+    shortcuts = "!git config -l | grep alias | cut -c 7-"
+
 [color]
     # Use colors in Git commands that are capable of colored output when outputting to the terminal
     ui = auto
