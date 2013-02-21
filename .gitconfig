@@ -16,8 +16,8 @@
     c = clone --recursive
     # Commit all changes
     ca = !git add -A && git commit -av
-    # Switch to a branch, creating it if necessary
-    go = checkout -B
+    # Switch to an track remote branch
+    go = checkout --track
     # Show verbose output about tags, branches or remotes
     tags = tag -l
     branches = branch -a
