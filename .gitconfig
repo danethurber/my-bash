@@ -36,8 +36,8 @@
     f = "!git ls-files | grep -i"
     # reset to last commit on HEAD
     stfu = reset --hard HEAD
-    # prune tracked branches
-    prune = remote prune
+    # prune tracked branches on origin
+    prn = remote prune origin
 
     # list aliases
     shortcuts = "!git config -l | grep alias | cut -c 7-"
