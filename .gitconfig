@@ -10,13 +10,15 @@
     di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
     # List modified files in last commit
     dl = "!git ll -1"
+    # Diff with patience
+    dip = git diff --patience
     # Pull in remote changes for the current repository and all its submodules
     p = !"git pull; git submodule foreach git pull origin master"
     # Clone a repository including all submodules
     c = clone --recursive
     # Commit all changes
     ca = !git add -A && git commit -av
-    # Switch to an track remote branch
+    # Switch to and track remote branch
     go = checkout --track
     # Show verbose output about tags, branches or remotes
     tags = tag -l
@@ -38,6 +40,15 @@
     stfu = reset --hard HEAD
     # prune tracked branches on origin
     prn = remote prune origin
+    # help with merging
+    ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+    theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+    # temporarily ignore files
+    assume = update-index --assume-unchanged
+    unassume = update-index --no-assume-unchanged
+    assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+    # stash a snapshot
+    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 
     # list aliases
     shortcuts = "!git config -l | grep alias | cut -c 7-"
