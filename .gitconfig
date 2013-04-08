@@ -11,7 +11,7 @@
     # List modified files in last commit
     dl = "!git ll -1"
     # Diff with patience
-    dip = git diff --patience
+    dip = diff --patience
     # Pull in remote changes for the current repository and all its submodules
     p = !"git pull; git submodule foreach git pull origin master"
     # Clone a repository including all submodules
